@@ -61,8 +61,16 @@ public class RegisterPOM {
 		@FindBy(id="input-confirm")
 		private WebElement confirm; 
 		
-		@FindBy(name="newsletter")
+		@FindBy(xpath="//input[@value='0']")
 		private WebElement subscribe;
+		
+		@FindBy(xpath="(//input[@value='1'])[3]")
+		private WebElement checkbox;
+		
+		
+		@FindBy(xpath="(//input[@class='btn btn-primary'])")
+		private WebElement continue_btn;
+		
 		
 		public void clickUserIcon() {
 			this.user_icon.click();
@@ -80,12 +88,12 @@ public class RegisterPOM {
 		}
 		
 		public void Email() {
-			this.email.sendKeys("mehadi");
+			this.email.sendKeys("manzoorali@gmail.com");
 			
 		}
 		
 		public void lastname() {
-			this.lastname.sendKeys("manzoor@gmail.com");
+			this.lastname.sendKeys("mehadi");
 			
 		}
 		
@@ -122,13 +130,13 @@ public class RegisterPOM {
 		
 
 		public void country() {
-			Select country = new Select(driver.findElement(By.id("country")));
+			Select country = new Select(this.country);
 			country.selectByVisibleText("India");
 			
 			}
 
 		public void state() {
-			Select state = new Select(driver.findElement(By.id("region")));
+			Select state = new Select(this.region);
 			state.selectByVisibleText("Karnataka");
 			
 			}
@@ -145,7 +153,28 @@ public class RegisterPOM {
 			
 			}
 		
-		public void sendUserName(String userName) {
+		
+		public void radio()
+		{
+			this.subscribe.click();
+			
+			}
+		
+		public void checkbox()
+		{
+			this.checkbox.click();
+			
+			}
+		
+		public void continue_btn()
+		{
+			this.continue_btn.click();
+		}
+		
+}
+		
+		
+		/*public void sendUserName(String userName) {
 			this.userName.clear();
 			this.userName.sendKeys(userName);
 		}
@@ -160,5 +189,5 @@ public class RegisterPOM {
 		}
 
 	}
-
+*/
 

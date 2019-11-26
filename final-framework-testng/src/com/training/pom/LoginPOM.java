@@ -11,37 +11,41 @@ public class LoginPOM {
 	public LoginPOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
+		
+		
 	}
 	
-	@FindBy(className="fa-user")
+	@FindBy(className="fa-user-o")
 	private WebElement user_icon; 
 	
 	
-	@FindBy(id="email")
-	private WebElement userName; 
+	@FindBy(id="input-email")
+	private WebElement Email; 
 	
-	@FindBy(id="pass")
-	private WebElement password;
 	
-	@FindBy(id="send2")
-	private WebElement loginBtn; 
+	@FindBy(id="input-password")
+	private WebElement password; 
+	
+	@FindBy(xpath="(//input[@class='btn btn-primary'])")
+	private WebElement login;
 	
 	public void clickUserIcon() {
 		this.user_icon.click();
 		
 	}
 	
-	public void sendUserName(String userName) {
-		this.userName.clear();
-		this.userName.sendKeys(userName);
+	public void Email() {
+		this.Email.sendKeys("manzoorali@gmail.com");
+		
 	}
 	
-	public void sendPassword(String password) {
-		this.password.clear(); 
-		this.password.sendKeys(password); 
+	public void password() {
+		this.password.sendKeys("manzoor1");
+		
 	}
 	
-	public void clickLoginBtn() {
-		this.loginBtn.click(); 
+	public void login() {
+		this.login.click();
+		
 	}
 }
