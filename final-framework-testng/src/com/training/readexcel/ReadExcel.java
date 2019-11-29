@@ -10,7 +10,7 @@ import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
 public class ReadExcel {
-	
+
 	public String[][] getExcelData(String fileName, String sheetName) 
 	   {
 			String[][] arrayExcelData = null;
@@ -40,15 +40,28 @@ public class ReadExcel {
 			}
 			return arrayExcelData;
 		}
+	
+		public String getExcelValue(String[][] excelData, int row, int col) {
+			
+//			String[][] arrayExcelData = getReadExcelObject().getExcelData("C:\\Selenium\\medium.xls", "Sheet1");
+			return excelData[row][col];
+		}
+	
+	
 
 	// Test method, change the path of the .xls file 
 	public static void main(String[] args) {
-		String[][] result = new ReadExcel().getExcelData("C:/Users/Naveen/Desktop/Testing.xls", "Sheet1"); 
+		ReadExcel readExcel = new ReadExcel();
+		String[][] excelData =  readExcel.getExcelData("C:\\Selenium\\medium.xls", "Sheet1");
 		
-		for(String [] temp : result){
-			for(String temp1: temp){
-				System.out.println(temp1);
-			}
-		}
+		System.out.println(readExcel.getExcelValue(excelData, 0,1));
+		System.out.println(readExcel.getExcelValue(excelData, 0,2));
+//		String[][] result = new ReadExcel().getExcelData("C:/Users/Naveen/Desktop/Testing.xls", "Sheet1"); 
+//		
+//		for(String [] temp : result){
+//			for(String temp1: temp){
+//				System.out.println(temp1);
+//			}
+//		}
 	}
 }

@@ -34,13 +34,13 @@ public class LoginPOM {
 		
 	}
 	
-	public void Email() {
-		this.Email.sendKeys("manzoorali@gmail.com");
+	public void Email(String email) {
+		this.Email.sendKeys(email);
 		
 	}
 	
-	public void password() {
-		this.password.sendKeys("manzoor1");
+	public void password(String password) {
+		this.password.sendKeys(password);
 		
 	}
 	
@@ -48,4 +48,6 @@ public class LoginPOM {
 		this.login.click();
 		
 	}
+	
+	
 }

@@ -44,19 +44,34 @@ public class Retail_Register {
 			driver.get(baseUrl);
 		}
 		
-		@AfterMethod
+		/*@AfterMethod
 		public void tearDown() throws Exception {
 			Thread.sleep(1000);
 			driver.quit();
-		}
+		}*/
 		@Test
 		public void validLoginTest() {
 			Register.clickUserIcon();
 			Register.clickregbtn();
-			loginPOM.sendUserName("admin");
-			loginPOM.sendPassword("admin@123");
-			loginPOM.clickLoginBtn(); 
-			screenShot.captureScreenShot("screenshots/First");
+			Register.firstname();
+			Register.Email();
+			Register.lastname();
+			Register.Telephone();
+			Register.password();
+			Register.postcode();
+			Register.confirm();
+			Register.country();
+			Register.address1();
+			Register.address2();
+			Register.state();
+			Register.city();
+			Register.radio();
+			Register.checkbox();
+			Register.continue_btn();
+			
+			// loginPOM.sendPassword("admin@123");
+			// loginPOM.clickLoginBtn(); 
+			 screenShot.captureScreenShot("screenshots/First");
 		}
 		// TODO Auto-generated method stub
 
